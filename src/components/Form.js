@@ -26,13 +26,13 @@ function handleSubmit(event){
     <form onSubmit={handleSubmit}>
       <input type="text" 
       name="firstName"
-      value={formData.firstName} />
-      onChange={handleFirstNameChange} 
+      value={formData.firstName} 
+      onChange={handleChange} />
 
       <input type="text" 
       name="lastName" 
-       value={formData.lastName} />
-      onChange={handleLastNameChange} 
+       value={formData.lastName} 
+      onChange  ={handleChange} />
 
       <button type="submit">Submit</button>
     </form>
