@@ -4,24 +4,26 @@ function Form() {
   const [formData, setFormData] = useState({
     firstName: "jonh",
     lastName: "tito",
+    admin: false,
   });
+  function handleChange(event){
+    const name = event.target.name;
+    let value = event.target.value;
 
-  function handleFirstNameChange(event) {
+    if(event.target.type === "checkbox"){
+      value = event.target.checked;
+    }
     setFormData({
       ...formData,
-     firstName: event.target.value,
-    });
+      [name]: value,
+    })
   }
-
-  function handleLastNameChange(event) {
-    setFormData({
-      ...formData,
-     lastName: event.target.value,
-    });
-  }
-
+function handleSubmit(event){
+  event.preventDefault();
+  console.log(formData);
+}
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type="text" 
       name="firstName"
       value={formData.firstName} />
